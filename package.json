@@ -2,7 +2,7 @@
     "name": "inwt-python-ide",
     "displayName": "INWT Python IDE",
     "description": "Extension bundle to develop Python applications for Data Science.",
-    "publisher": "SebastianWarnholz",
+    "publisher": "inwt",
     "repository": {"url": "https://github.com/inwtlab/inwt-python-ide"},
     "version": "0.0.1",
     "engines": {
