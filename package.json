@@ -14,15 +14,16 @@
         "Extension Packs"
     ],
     "extensionPack": [
-        "christian-kohler.path-intellisense",
-        "CoenraadS.bracket-pair-colorizer-2",
-        "Gruntfuggly.todo-tree",
-        "guyskk.language-cython",
-        "TabNine.tabnine-vscode",
-        "GrapeCity.gc-excelviewer",
-        "mikestead.dotenv",
         "ms-python.python",
         "ms-toolsai.jupyter",
+        "ms-python.vscode-pylance",
+        "guyskk.language-cython",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "TabNine.tabnine-vscode",
+        "christian-kohler.path-intellisense",
+        "CoenraadS.bracket-pair-colorizer-2",
+        "GrapeCity.gc-excelviewer",
+        "mikestead.dotenv",
         "ms-azuretools.vscode-docker",
         "ms-vscode-remote.remote-containers",
         "ms-vscode-remote.remote-ssh",
@@ -34,6 +35,6 @@
         "streetsidesoftware.code-spell-checker",
         "streetsidesoftware.code-spell-checker-german",
         "usernamehw.errorlens",
-        "VisualStudioExptTeam.vscodeintellicode"
+        "Gruntfuggly.todo-tree"
     ]
 }
