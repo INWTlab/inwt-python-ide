@@ -4,8 +4,23 @@
 
 This is an extension pack bundling useful vscode extensions to develop Python
 packages. It is used as a starting point and configuration to set up vscode
-at INWT Statistics. It is opinionated and will introduce braking changes at
-will.
+at INWT Statistics.
+
+## TODOs
+
+- Set all settings automatically
+- Update local configuration files (setup.cfg, project.toml, etc)
+- Install python packages in the same way official python package is doing it;
+  by asking...
+
+## Keybindings
+
+- ctrl+enter: Execute selection or line in interactive window or debug console
+  *and* step
+- ctrl[-shift]-tab: Quick open of editors/files in group
+- ctrl-p: open recent projects/folders
+- [ctrl-]f12: Jump to or back from definition
+- ctrl[-shift]-[up|down]: move or select block-wise
 
 ## Recommended Settings
 
@@ -47,6 +62,27 @@ will.
     }
 }
 
+```
+
+## Pipenv
+
+Consider to add the following packages to your pipenv:
+
+```pipfile
+[pipenv]
+allow_prereleases = true
+
+[dev-packages]
+pytest = {index = "pypi",version = "==6.1.2"}
+pytest-cov = {index = "pypi",version = "==2.10.1"}
+bumpversion = {index = "pypi",version = "==0.6.0"}
+pytest-xdist = {index = "pypi",version = "==1.33.0"}
+wemake-python-styleguide = {index = "pypi",version = "*"}
+isort = {index = "pypi",version = "*"}
+black = {index = "pypi",version = "*"}
+mypy = {index = "pypi",version = "*"}
+pre-commit = {index = "pypi",version = "*"}
+rope = {index = "pypi",version = "*"}
 ```
 
 ## Autoformat in legacy codebase
