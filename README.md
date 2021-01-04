@@ -24,6 +24,8 @@ at INWT Statistics.
 
 ## Recommended Settings
 
+These are workspace settings and they may already be set.
+
 ```json
 {
     "python.autoComplete.addBrackets": true,
@@ -32,11 +34,11 @@ at INWT Statistics.
     "python.testing.pytestEnabled": true,
     "python.formatting.provider": "black",
     "files.autoSave": "afterDelay",
-    "python.formatting.blackPath": "black",
+    "python.formatting.blackPath": "darker",
     "python.formatting.blackArgs": [],
     "python.sortImports.path": "isort",
     "python.sortImports.args": [],
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Microsoft",
     "python.linting.mypyEnabled": true,
     "rewrap.wrappingColumn": 79,
     "git.autofetch": true,
@@ -64,6 +66,14 @@ at INWT Statistics.
 
 ```
 
+Also you may want to put the following into your user config:
+
+```json
+    "jupyter.runStartupCommands": [
+        "%load_ext autoreload, %autoreload 2"
+    ]
+```
+
 ## Pipenv
 
 Consider to add the following packages to your pipenv:
@@ -80,33 +90,65 @@ pytest-xdist = {index = "pypi",version = "==1.33.0"}
 wemake-python-styleguide = {index = "pypi",version = "*"}
 isort = {index = "pypi",version = "*"}
 black = {index = "pypi",version = "*"}
+darker = {index = "pypi",version = "*"}
 mypy = {index = "pypi",version = "*"}
 pre-commit = {index = "pypi",version = "*"}
 rope = {index = "pypi",version = "*"}
+jupyter = {index = "pypi",version = "*"}
 ```
 
 ## Autoformat in legacy codebase
 
 `black` is a pretty aggressive code formatter and currently does not provide an
-option to only format changes. For that you may use `darker`. To install and
-use `darker` follow these steps:
+option to only format changes. For that you may use `darker`. It is the default
+in this configuration.
 
-1. Do not touch pipenv, darker inside the pipenv does not work.
-2. Install darker with `pip3 install darker`
-3. Find where `darker` lives in your system with `which darker`
-4. Copy-paste the path into the `python.formatting.blackPath` option
-5. Add `--diffs` to the `python.formatting.blackArgs` option
+### Caveats
 
-Darker will only format code that appears in a git diff. A new file has no diff
-and will not be reformated. It is enough to stage the empty file.
+- Darker will only format code that appears in a git diff. A new file has no
+  diff and will not be reformated. It is enough to stage the empty file.
 
 ## Troubleshooting
 
 ### pytest cannot find tests
 
-- Update pytest to latest version
+- Update pytest to latest version, in your pipenv
 - Check output of pytest. Discovery fails when there are
   - Syntax errors
   - or when dependencies cannot be resolved. In which case:
     - you check that you are inside the pipenv
     - the module is actually available: e.g. update pipenv / install correct version
+
+### GOTO definition (F12) is not responding
+
+Can happen if we do a lot of search and replaces in files. May also be correlated
+with false positive lints of the LSP.
+
+- Restart language server by: `ctrl shift p`, then type *Restart language
+  server*.
+- Or sometimes restart vscode and try again.
+
+### isort puts imports in wrong order
+
+#### Use absolute path for isort!
+
+(Most likely) This is becuase isort is not called within the pipenv. There is a
+ticket for this in GitHub and no solution in sight. If isort behaves strangely
+go to your `./.vscode/settings.json` and replace `isort` with the absolute path:
+
+```json
+    "python.sortImports.path": "<PATH TO ISORT>"
+```
+
+You get this path by typing `which isort` in your vscode terminal. It should
+point to your virtual envvironment.
+
+#### Update isort with pip3
+
+This can also happen when isort is outdated on your system. It would be better
+to use the one in the virutal env, but it may also be resolved by upgrading the
+system isort version:
+
+```sh
+pip3 install -U isort
+```
