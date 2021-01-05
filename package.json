@@ -113,7 +113,8 @@
         "streetsidesoftware.code-spell-checker",
         "streetsidesoftware.code-spell-checker-german",
         "usernamehw.errorlens",
-        "Gruntfuggly.todo-tree"
+        "Gruntfuggly.todo-tree",
+        "jmfirth.vsc-space-block-jumper"
     ],
     "scripts": {
         "vscode:prepublish": "npm run compile",
