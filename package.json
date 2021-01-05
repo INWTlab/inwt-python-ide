@@ -91,7 +91,8 @@
     },
     "extensionDependencies": [
         "ms-python.python",
-        "ms-toolsai.jupyter"
+        "ms-toolsai.jupyter",
+        "jmfirth.vsc-space-block-jumper"
     ],
     "extensionPack": [
         "ms-python.vscode-pylance",
@@ -113,8 +114,7 @@
         "streetsidesoftware.code-spell-checker",
         "streetsidesoftware.code-spell-checker-german",
         "usernamehw.errorlens",
-        "Gruntfuggly.todo-tree",
-        "jmfirth.vsc-space-block-jumper"
+        "Gruntfuggly.todo-tree"
     ],
     "scripts": {
         "vscode:prepublish": "npm run compile",

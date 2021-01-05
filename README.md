@@ -38,9 +38,9 @@ These are workspace settings and they may already be set.
     "python.formatting.blackArgs": [],
     "python.sortImports.path": "isort",
     "python.sortImports.args": [],
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Pylance",
     "python.linting.mypyEnabled": true,
-    "rewrap.wrappingColumn": 79,
+    "rewrap.wrappingColumn": 80,
     "git.autofetch": true,
     "diffEditor.renderSideBySide": true,
     "diffEditor.ignoreTrimWhitespace": true,
@@ -84,16 +84,10 @@ allow_prereleases = true
 
 [dev-packages]
 pytest = {index = "pypi",version = "==6.1.2"}
-pytest-cov = {index = "pypi",version = "==2.10.1"}
-bumpversion = {index = "pypi",version = "==0.6.0"}
-pytest-xdist = {index = "pypi",version = "==1.33.0"}
 wemake-python-styleguide = {index = "pypi",version = "*"}
 isort = {index = "pypi",version = "*"}
-black = {index = "pypi",version = "*"}
 darker = {index = "pypi",version = "*"}
 mypy = {index = "pypi",version = "*"}
-pre-commit = {index = "pypi",version = "*"}
-rope = {index = "pypi",version = "*"}
 jupyter = {index = "pypi",version = "*"}
 ```
 
