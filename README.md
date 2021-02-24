@@ -61,7 +61,8 @@ These are workspace settings and they may already be set.
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
-    }
+    },
+    "githubIssues.issueBranchTitle": "feature/${issueNumber}_${sanitizedIssueTitle}"
 }
 
 ```
@@ -112,6 +113,14 @@ in this configuration.
   - or when dependencies cannot be resolved. In which case:
     - you check that you are inside the pipenv
     - the module is actually available: e.g. update pipenv / install correct version
+
+### pytest reports module not found errors of project package
+
+- Make sure in `setup.py` test folders and submodules are part of `package_data`
+- Make sure all sub folder (modules) have a `__init__.py` file. This may
+  include the `tests` folder. See
+  https://github.com/microsoft/vscode-python/issues/14570 and
+  https://github.com/microsoft/vscode-python/issues/14579
 
 ### GOTO definition (F12) is not responding
 
