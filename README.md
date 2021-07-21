@@ -134,7 +134,7 @@ per-file-ignores =
 [isort]
 include_trailing_comma = True
 multi_line_output = 3
-line_length = 120
+line_length = 100
 skip = setup.py
 force_grid_wrap = 0
 use_parentheses = True
