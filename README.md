@@ -24,7 +24,7 @@ at INWT Statistics.
 
 ## Recommended Settings
 
-These are workspace settings and they may already be set.
+**./.vscode/settings.json**
 
 ```json
 {
@@ -75,6 +75,76 @@ Also you may want to put the following into your user config:
     ]
 ```
 
+**pyproject.toml**
+
+```toml
+[tool.nitpick]
+style = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/nitpick-style.toml"
+
+[tool.flakehell]
+base = "https://raw.githubusercontent.com/life4/flakehell/master/pyproject.toml"
+baseline = ".flakehell_baseline"
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+```
+
+**setup.cfg**
+
+```
+[darglint]
+strictness = long
+
+[flake8]
+format = wemake
+show-source = True
+enable-extensions = G
+radon-no-assert = True
+radon-show-closures = True
+max-string-usages = 5
+max-line-length = 100
+inline-quotes = "
+# See https://wemake-python-stylegui.de/en/latest/pages/usage/configuration.html for all configurations
+ignore =  D401,WPS305,   # ignore imperative mood check in docstring
+# See https://wemake-python-stylegui.de/en/latest/pages/usage/violations/index.html for all error codes
+per-file-ignores =
+    # allow asserts in test files
+    */tests/*: S101
+
+[isort]
+include_trailing_comma = True
+multi_line_output = 3
+line_length = 120
+skip = setup.py
+force_grid_wrap = 0
+use_parentheses = True
+ensure_newline_before_comments = True
+
+[mypy]
+ignore_missing_imports = True
+```
+
+
 ## Pipenv
 
 Consider to add the following packages to your pipenv:
@@ -84,12 +154,12 @@ Consider to add the following packages to your pipenv:
 allow_prereleases = true
 
 [dev-packages]
-pytest = {index = "pypi",version = "==6.1.2"}
-wemake-python-styleguide = {index = "pypi",version = "*"}
-isort = {index = "pypi",version = "*"}
-darker = {index = "pypi",version = "*"}
-mypy = {index = "pypi",version = "*"}
-jupyter = {index = "pypi",version = "*"}
+pytest = {version = "*"}
+wemake-python-styleguide = {version = "*"}
+isort = {version = "*"}
+darker = {version = "*"}
+mypy = {version = "*"}
+jupyter = {version = "*"}
 ```
 
 ## Autoformat in legacy codebase
@@ -133,7 +203,7 @@ with false positive lints of the LSP.
 
 ### isort puts imports in wrong order
 
-#### Use absolute path for isort!
+#### Use absolute path for isort
 
 (Most likely) This is becuase isort is not called within the pipenv. There is a
 ticket for this in GitHub and no solution in sight. If isort behaves strangely
