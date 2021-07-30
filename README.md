@@ -16,7 +16,7 @@ at INWT Statistics.
 ## Keybindings
 
 - ctrl+enter: Execute selection or line in interactive window or debug console
-  *and* step
+  _and_ step
 - ctrl[-shift]-tab: Quick open of editors/files in group
 - ctrl-p: open recent projects/folders
 - [ctrl-]f12: Jump to or back from definition
@@ -30,7 +30,7 @@ The extension will set a number of settings in your workspace configuration. If 
 
 ```json
 {
-    "INWT.Python.IDE.updateWorkspaceSettings": false
+  "INWT.Python.IDE.updateWorkspaceSettings": false
 }
 ```
 
@@ -105,7 +105,6 @@ ensure_newline_before_comments = True
 ignore_missing_imports = True
 ```
 
-
 ## Pipenv
 
 Consider to add the following packages to your pipenv:
@@ -162,8 +161,8 @@ in your pipenv or system.
 Can happen if we do a lot of search and replaces in files. May also be correlated
 with false positive lints of the LSP.
 
-- Restart language server by: `ctrl shift p`, then type *Restart language
-  server*.
+- Restart language server by: `ctrl shift p`, then type _Restart language
+  server_.
 - Or sometimes restart vscode and try again.
 
 ### isort puts imports in wrong order
