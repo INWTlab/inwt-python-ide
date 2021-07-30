@@ -24,56 +24,17 @@ at INWT Statistics.
 
 ## Recommended Settings
 
-**./.vscode/settings.json**
+The extension will set a number of settings in your workspace configuration. If you do not want the extension to update these settings you can disable that behaviour by adding the following to your `settings.json`.
+
+**settings.json**
 
 ```json
 {
-    "python.autoComplete.addBrackets": true,
-    "python.linting.flake8Enabled": true,
-    "python.terminal.activateEnvInCurrentTerminal": true,
-    "python.testing.pytestEnabled": true,
-    "python.formatting.provider": "black",
-    "files.autoSave": "afterDelay",
-    "python.formatting.blackPath": "darker",
-    "python.formatting.blackArgs": [],
-    "python.sortImports.path": "isort",
-    "python.sortImports.args": [],
-    "python.languageServer": "Pylance",
-    "python.linting.mypyEnabled": true,
-    "rewrap.wrappingColumn": 80,
-    "git.autofetch": true,
-    "diffEditor.renderSideBySide": true,
-    "diffEditor.ignoreTrimWhitespace": true,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
-    "gitlens.defaultDateStyle": "absolute",
-    "tabnine.experimentalAutoImports": true,
-    "cSpell.enabled": false,
-    "cSpell.language": "de,de-DE,en",
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "python.analysis.completeFunctionParens": true,
-    "vsintellicode.sql.completionsEnabled": false,
-    "[python]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
-    "githubIssues.issueBranchTitle": "feature/${issueNumber}_${sanitizedIssueTitle}"
+    "INWT.Python.IDE.updateWorkspaceSettings": false
 }
-
 ```
 
-Also you may want to put the following into your user config:
-
-```json
-    "jupyter.runStartupCommands": [
-        "%load_ext autoreload, %autoreload 2"
-    ]
-```
+For all tooling to work properly you can add the following configuration files to your project.
 
 **pyproject.toml**
 
@@ -157,7 +118,8 @@ allow_prereleases = true
 pytest = {version = "*"}
 wemake-python-styleguide = {version = "*"}
 isort = {version = "*"}
-darker = {version = "*"}
+black = {version = "*"}
+# darker = {version = "*"}
 mypy = {version = "*"}
 jupyter = {version = "*"}
 ```
@@ -165,13 +127,16 @@ jupyter = {version = "*"}
 ## Autoformat in legacy codebase
 
 `black` is a pretty aggressive code formatter and currently does not provide an
-option to only format changes. For that you may use `darker`. It is the default
-in this configuration.
+option to only format changes. For that you may use `darker`. Open
+`./.vscode/settings.json` and change the black path to `darker`. Install darker
+in your pipenv or system.
 
-### Caveats
+```json
+"python.formatting.blackPath": "darker"
+```
 
-- Darker will only format code that appears in a git diff. A new file has no
-  diff and will not be reformated. It is enough to stage the empty file.
+- Darker will only format code that appears in a git diff. Run `git init` if your are not in a git repo already.
+- A new file has no diff and will not be reformated. It is enough to stage the empty file.
 
 ## Troubleshooting
 

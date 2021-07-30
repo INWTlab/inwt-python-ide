@@ -19,9 +19,53 @@
     ],
     "main": "./out/extension.js",
     "contributes": {
+        "configuration": {
+            "title": "INWT Python IDE",
+            "properties": {
+                "INWT.Python.IDE.smartExecute.engine": {
+                    "description": "How we send the selection to a REPL.",
+                    "type": "string",
+                    "default": "internal",
+                    "enum": ["internal", "python", "jupyter"],
+                    "enumDescriptions": [
+                        "A fresh implementation of send text to REPL.",
+                        "The more reliable implementation in the python extension. Cannot handle decorators.",
+                        "The more reliable implementation in the jupyter extension. Starts an interactive notebook. May not handle decorators."
+                    ]
+                },
+                "INWT.Python.IDE.smartExecute.blockSelect": {
+                    "description": "Smart execute will auto-select code blocks for execution in the REPL.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "INWT.Python.IDE.smartExecute.step": {
+                    "description": "Move the cursor to the next non empty line after excuting code in the REPL.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "INWT.Python.IDE.smartExecute.delay": {
+                    "description": "How long (in milliseconds) the selected code block will be highlighted before it is executed.",
+                    "type": "number",
+                    "default": 100
+                },
+                "INWT.Python.IDE.updateWorkspaceSettings": {
+                    "description": "Enable or disable the setting of workspace settings according to INWT standards. Will not change workspace settings if they are already set.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "configurationDefaults": {
+            "[python]": {
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": true
+                }
+            }
+        },
         "commands": [
             {
-                "command": "inwt-python-ide.jupyterExecAndStep",
+                "command": "inwt-python-ide.smartExecAndStep",
                 "title": "INWT: Send selection to interactive Python and step."
             },
             {
@@ -84,7 +128,7 @@
             },
             {
                 "key": "ctrl+enter",
-                "command": "inwt-python-ide.jupyterExecAndStep",
+                "command": "inwt-python-ide.smartExecAndStep",
                 "when": "editorTextFocus && !inDebugMode && !replaceInputFocussed && editorLangId == 'python'"
             }
         ]
@@ -98,7 +142,6 @@
         "ms-python.vscode-pylance",
         "guyskk.language-cython",
         "VisualStudioExptTeam.vscodeintellicode",
-        "TabNine.tabnine-vscode",
         "christian-kohler.path-intellisense",
         "CoenraadS.bracket-pair-colorizer-2",
         "GrapeCity.gc-excelviewer",
@@ -113,8 +156,7 @@
         "stkb.rewrap",
         "streetsidesoftware.code-spell-checker",
         "streetsidesoftware.code-spell-checker-german",
-        "usernamehw.errorlens",
-        "Gruntfuggly.todo-tree"
+        "usernamehw.errorlens"
     ],
     "scripts": {
         "vscode:prepublish": "npm run compile",
