@@ -6,7 +6,7 @@
     "repository": {
         "url": "https://github.com/inwtlab/inwt-python-ide"
     },
-    "version": "0.4.1",
+    "version": "0.5.0",
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -26,7 +26,11 @@
                     "description": "How we send the selection to a REPL.",
                     "type": "string",
                     "default": "internal",
-                    "enum": ["internal", "python", "jupyter"],
+                    "enum": [
+                        "internal",
+                        "python",
+                        "jupyter"
+                    ],
                     "enumDescriptions": [
                         "A fresh implementation of send text to REPL.",
                         "The more reliable implementation in the python extension. Cannot handle decorators.",
