@@ -21,7 +21,7 @@ Ctrl+Enter we look at the line your cursor is currently in and make a decision
 if we think you better execute the complete block in the REPL instead of just
 that line.
 
-![smart-execute.gif](https://github.com/INWTlab/inwt-python-ide/blob/main/smart-execute.gif)
+![smart-execute.gif](https://github.com/INWTlab/inwt-python-ide/blob/main/smart-execute.gif?raw=true)
 
 You can deactivate smart execute in the settings of the extension or by directly adding:
 
