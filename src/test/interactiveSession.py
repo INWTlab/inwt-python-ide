@@ -26,6 +26,31 @@ else:
     print("Else")
 
 
+def test():
+    return ""
+
+
+x = {
+    "key1": "value",
+    "key2": "value",
+    "key3": "value",
+    "key4": "value",
+    "key5": "value",
+}
+
+another_long_name_here = 1
+[
+    a_very_long_name_again + another_long_name_here
+    for a_very_long_name_again in range(10)
+]
+
+
+def function_with_a_lot_of_params(
+    very_long_argument_name="value", so_that_we_need_a_line_break="value"
+):
+    pass
+
+
 @contextmanager
 def my_context():
     yield 1

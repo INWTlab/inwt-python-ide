@@ -1,9 +1,32 @@
 # Change Log
 
-All notable changes to the "inwt-python-ide" extension pack will be documented in this file.
+## [0.5.2] - 2021-08-06
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+### Fixed
 
-## [Unreleased]
+-   Smart execute will now correctly identify function definitions where the
+    signature is spanning multiple lines. We now also identify blocks of code
+    which are defined by opening/closing paranthesis and spanning multiple
+    lines. E.g. a list comprehension or definition of a dict.
 
-- Initial release
+## [0.5.1] - 2021-07-30
+
+### Added
+
+-   Added a INWT brand logo to the extension.
+
+## [0.5.0] - 2021-07-30
+
+### Added
+
+-   We now set vscode workspace setting for vscode in a new project.
+-   The extension now provides a smart execute option. Here we identify code
+    blocks (def, class, if-else, while, for, etc) and execute the entire block
+    in the REPL.
+
+### Changed
+
+-   Error Lens is disabled by default. You can enable it by setting
+    `errorLens.messageEnabled` in your `settings.json`.
+-   By default we now use the Python REPL instead of Jupyter interactive as
+    REPL. You can change this behaviour in the settings.
