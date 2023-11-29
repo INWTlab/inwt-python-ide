@@ -15,11 +15,9 @@ export function activate(context: vscode.ExtensionContext) {
                 let selection = smartSelect();
                 await delay();
                 if (engine === "python") {
-                    vscode.commands.executeCommand("python.execSelectionInTerminal");
+                    selectionToRepl(selection);
                 } else if (engine === "jupyter") {
                     vscode.commands.executeCommand("jupyter.execSelectionInteractive", selection);
-                } else {
-                    selectionToRepl(selection);
                 }
                 step(editor);
             }
@@ -47,7 +45,7 @@ async function selectionToRepl(selection: string) {
     await vscode.commands.executeCommand("python.startREPL");
     if (vscode.window) {
         let terminal = vscode.window.activeTerminal;
-        terminal?.sendText(selection);
+        terminal?.sendText(selection, true);
     }
 }
 

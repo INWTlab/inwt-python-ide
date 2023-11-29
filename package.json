@@ -24,37 +24,35 @@
             "title": "INWT Python IDE",
             "properties": {
                 "INWT.Python.IDE.smartExecute.engine": {
-                    "description": "How we send the selection to a REPL.",
+                    "description": "Send the code selection to a python REPL or jupyter ipython session.",
                     "type": "string",
                     "default": "python",
                     "enum": [
-                        "internal",
                         "python",
                         "jupyter"
                     ],
                     "enumDescriptions": [
-                        "A fresh implementation of send text to REPL.",
-                        "The more reliable implementation in the python extension. Cannot handle decorators.",
-                        "The more reliable implementation in the jupyter extension. Starts an interactive notebook. May not handle decorators."
+                        "Sends code selection to python REPL. Optionally starts a new REPL.",
+                        "Sends code selection to jupyter ipython session. Optionally starts an interactive notebook."
                     ]
                 },
                 "INWT.Python.IDE.smartExecute.blockSelect": {
-                    "description": "Smart execute will auto-select code blocks for execution in the REPL.",
+                    "description": "Smart execute will auto-select code blocks for execution.",
                     "type": "boolean",
                     "default": true
                 },
                 "INWT.Python.IDE.smartExecute.step": {
-                    "description": "Move the cursor to the next non empty line after excuting code in the REPL.",
+                    "description": "Move the cursor to the next non empty line after excuting code.",
                     "type": "boolean",
                     "default": true
                 },
                 "INWT.Python.IDE.smartExecute.delay": {
-                    "description": "How long (in milliseconds) the selected code block will be highlighted before it is executed.",
+                    "description": "How long (in milliseconds) the selected code block will be highlighted in the editor before it is executed.",
                     "type": "number",
                     "default": 100
                 },
                 "INWT.Python.IDE.updateWorkspaceSettings": {
-                    "description": "Enable or disable the setting of workspace settings according to INWT standards. Will not change workspace settings if they are already set.",
+                    "description": "Automatically create a workspace settings.json according to INWT standards. Will not change workspace settings if they are already set.",
                     "type": "boolean",
                     "default": true
                 }
@@ -144,8 +142,8 @@
         "jmfirth.vsc-space-block-jumper"
     ],
     "extensionPack": [
-        "ms-python.vscode-pylance",
-        "guyskk.language-cython",
+        "ms-python.python",
+        "ms-toolsai.jupyter",
         "VisualStudioExptTeam.vscodeintellicode",
         "christian-kohler.path-intellisense",
         "GrapeCity.gc-excelviewer",
