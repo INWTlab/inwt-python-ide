@@ -1,13 +1,13 @@
 {
     "name": "inwt-python-ide",
-    "displayName": "INWT Python IDE",
+    "displayName": "INWT Python IDE v2",
     "description": "Extension bundle to develop Python applications for Data Science.",
-    "publisher": "inwt",
+    "publisher": "inwtlab",
     "repository": {
         "url": "https://github.com/inwtlab/inwt-python-ide"
     },
     "icon": "inwt-logo-square.png",
-    "version": "0.6.0",
+    "version": "23.11.0",
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -21,37 +21,9 @@
     "main": "./out/extension.js",
     "contributes": {
         "configuration": {
-            "title": "INWT Python IDE",
+            "title": "INWT Python IDE v2",
             "properties": {
-                "INWT.Python.IDE.smartExecute.engine": {
-                    "description": "Send the code selection to a python REPL or jupyter ipython session.",
-                    "type": "string",
-                    "default": "python",
-                    "enum": [
-                        "python",
-                        "jupyter"
-                    ],
-                    "enumDescriptions": [
-                        "Sends code selection to python REPL. Optionally starts a new REPL.",
-                        "Sends code selection to jupyter ipython session. Optionally starts an interactive notebook."
-                    ]
-                },
-                "INWT.Python.IDE.smartExecute.blockSelect": {
-                    "description": "Smart execute will auto-select code blocks for execution.",
-                    "type": "boolean",
-                    "default": true
-                },
-                "INWT.Python.IDE.smartExecute.step": {
-                    "description": "Move the cursor to the next non empty line after excuting code.",
-                    "type": "boolean",
-                    "default": true
-                },
-                "INWT.Python.IDE.smartExecute.delay": {
-                    "description": "How long (in milliseconds) the selected code block will be highlighted in the editor before it is executed.",
-                    "type": "number",
-                    "default": 100
-                },
-                "INWT.Python.IDE.updateWorkspaceSettings": {
+                "INWT.Python.IDE.V2.updateWorkspaceSettings": {
                     "description": "Automatically create a workspace settings.json according to INWT standards. Will not change workspace settings if they are already set.",
                     "type": "boolean",
                     "default": true
@@ -66,16 +38,6 @@
                 }
             }
         },
-        "commands": [
-            {
-                "command": "inwt-python-ide.smartExecAndStep",
-                "title": "INWT: Send selection to interactive Python and step."
-            },
-            {
-                "command": "inwt-python-ide.debugExecAndStep",
-                "title": "INWT: Send selection to debug console and step."
-            }
-        ],
         "keybindings": [
             {
                 "key": "ctrl+tab",
@@ -84,11 +46,6 @@
             {
                 "key": "ctrl+tab",
                 "command": "workbench.action.quickOpenNavigateNextInFilePicker",
-                "when": "inFilesPicker && inQuickOpen"
-            },
-            {
-                "key": "ctrl+shift+tab",
-                "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
                 "when": "inFilesPicker && inQuickOpen"
             },
             {
@@ -103,62 +60,14 @@
             {
                 "key": "ctrl+f12",
                 "command": "workbench.action.navigateBack"
-            },
-            {
-                "key": "ctrl+down",
-                "command": "spaceBlockJumper.moveDown",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+up",
-                "command": "spaceBlockJumper.moveUp",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+shift+down",
-                "command": "spaceBlockJumper.selectDown",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+shift+up",
-                "command": "spaceBlockJumper.selectUp",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+enter",
-                "command": "inwt-python-ide.debugExecAndStep",
-                "when": "editorTextFocus && inDebugMode && !replaceInputFocussed && editorLangId == 'python'"
-            },
-            {
-                "key": "ctrl+enter",
-                "command": "inwt-python-ide.smartExecAndStep",
-                "when": "editorTextFocus && !inDebugMode && !replaceInputFocussed && editorLangId == 'python'"
             }
         ]
     },
-    "extensionDependencies": [
-        "ms-python.python",
-        "ms-toolsai.jupyter",
-        "jmfirth.vsc-space-block-jumper"
-    ],
     "extensionPack": [
+        "inwtlab.python-smart-execute",
         "ms-python.python",
         "ms-toolsai.jupyter",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "christian-kohler.path-intellisense",
-        "GrapeCity.gc-excelviewer",
-        "mikestead.dotenv",
-        "ms-azuretools.vscode-docker",
-        "ms-vscode-remote.remote-containers",
-        "ms-vscode-remote.remote-ssh",
-        "ms-vscode-remote.remote-ssh-edit",
-        "ms-vsliveshare.vsliveshare",
-        "GitHub.vscode-pull-request-github",
-        "eamodio.gitlens",
-        "stkb.rewrap",
-        "streetsidesoftware.code-spell-checker",
-        "streetsidesoftware.code-spell-checker-german",
-        "usernamehw.errorlens"
+        "stkb.rewrap"
     ],
     "scripts": {
         "vscode:prepublish": "npm run compile",
