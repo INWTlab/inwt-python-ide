@@ -31,25 +31,36 @@
             }
         },
         "configurationDefaults": {
+            "files.autoSave": "afterDelay",
+            "files.trimFinalNewlines": true,
             "notebook.formatOnSave.enabled": true,
             "notebook.codeActionsOnSave": {
                 "source.organizeImports": true
             },
+            "python.languageServer": "Pylance",
+            "python.analysis.autoFormatStrings": true,
+            "python.analysis.autoImportCompletions": true,
+            "python.analysis.completeFunctionParens": true,
+            "python.analysis.enablePytestExtra": false,
+            "python.analysis.gotoDefinitionInStringLiteral": true,
+            "python.analysis.inlayHints.callArgumentNames": "all",
+            "python.analysis.inlayHints.functionReturnTypes": false,
+            "python.analysis.inlayHints.pytestParameters": true,
             "[python]": {
                 "editor.formatOnSave": true,
-                "editor.defaultFormatter": "ms-python.black-formatter",
+                "editor.defaultFormatter": "charliermarsh.ruff",
                 "editor.codeActionsOnSave": {
                     "source.organizeImports": true
                 }
             },
-            "black-formatter.args": [
-                "--max-line-length 100"
+            "ruff.format.args": ["--line-length=100"],
+            "ruff.lint.args": [
+                "--select=ALL",
+                "--line-length=100",
+                "--ignore=D100"
             ],
-            "ruff.organizeImports": false,
-            "isort.args": [
-                "--profile=black",
-                "--line-length=100"
-            ]
+            "ruff.organizeImports": true,
+            "vsintellicode.features.python.deepLearning": "enabled"
         },
         "keybindings": [
             {
@@ -78,13 +89,14 @@
     },
     "extensionPack": [
         "charliermarsh.ruff",
+        "donjayamanne.python-environment-manager",
         "inwtlab.python-smart-execute",
-        "ms-python.isort",
-        "ms-python.black-formatter",
         "ms-python.mypy-type-checker",
         "ms-python.python",
+        "ms-python.vscode-pylance",
         "ms-toolsai.jupyter",
-        "stkb.rewrap"
+        "stkb.rewrap",
+        "visualstudioexptteam.vscodeintellicode"
     ],
     "scripts": {
         "vscode:prepublish": "npm run compile",
