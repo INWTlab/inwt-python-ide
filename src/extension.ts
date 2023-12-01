@@ -13,18 +13,18 @@ export function deactivate() {}
 
 function updateWorkspaceSettingsAccordingToINWTStandards() {
     if (getConfigUpdateSettings()) {
-        setWorkspaceSetting("files", "trimTrailingWhitespace", true);
-        setWorkspaceSetting("files", "insertFinalNewline", true);
-        setWorkspaceSetting("python", "autoComplete.addBrackets", true);
-        setWorkspaceSetting("python", "linting.flake8Enabled", true);
-        setWorkspaceSetting("python", "terminal.activateEnvInCurrentTerminal", true);
-        setWorkspaceSetting("python", "testing.pytestEnabled", true);
-        setWorkspaceSetting("python", "formatting.provider", "black");
-        setWorkspaceSetting("python", "formatting.blackPath", "black");
-        setWorkspaceSetting("python", "sortImports.path", "isort");
-        setWorkspaceSetting("python", "languageServer", "Pylance");
-        setWorkspaceSetting("python", "analysis.completeFunctionParens", true);
-        setWorkspaceSetting("vsintellicode", "sql.completionsEnabled", false);
+        // setWorkspaceSetting("files", "trimTrailingWhitespace", true);
+        // setWorkspaceSetting("files", "insertFinalNewline", true);
+        // setWorkspaceSetting("python", "autoComplete.addBrackets", true);
+        // setWorkspaceSetting("python", "linting.flake8Enabled", true);
+        // setWorkspaceSetting("python", "terminal.activateEnvInCurrentTerminal", true);
+        // setWorkspaceSetting("python", "testing.pytestEnabled", true);
+        // setWorkspaceSetting("python", "formatting.provider", "black");
+        // setWorkspaceSetting("python", "formatting.blackPath", "black");
+        // setWorkspaceSetting("python", "sortImports.path", "isort");
+        // setWorkspaceSetting("python", "languageServer", "Pylance");
+        // setWorkspaceSetting("python", "analysis.completeFunctionParens", true);
+        // setWorkspaceSetting("vsintellicode", "sql.completionsEnabled", false);
     }
 }
 

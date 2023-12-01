@@ -31,12 +31,25 @@
             }
         },
         "configurationDefaults": {
+            "notebook.formatOnSave.enabled": true,
+            "notebook.codeActionsOnSave": {
+                "source.organizeImports": true
+            },
             "[python]": {
                 "editor.formatOnSave": true,
+                "editor.defaultFormatter": "ms-python.black-formatter",
                 "editor.codeActionsOnSave": {
                     "source.organizeImports": true
                 }
-            }
+            },
+            "black-formatter.args": [
+                "--max-line-length 100"
+            ],
+            "ruff.organizeImports": false,
+            "isort.args": [
+                "--profile=black",
+                "--line-length=100"
+            ]
         },
         "keybindings": [
             {
@@ -64,7 +77,11 @@
         ]
     },
     "extensionPack": [
+        "charliermarsh.ruff",
         "inwtlab.python-smart-execute",
+        "ms-python.isort",
+        "ms-python.black-formatter",
+        "ms-python.mypy-type-checker",
         "ms-python.python",
         "ms-toolsai.jupyter",
         "stkb.rewrap"

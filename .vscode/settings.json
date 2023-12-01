@@ -1,11 +1,16 @@
 {
-    "cSpell.enabled": false,
-    "files.exclude": {
-        "out": false // set this to true to hide the "out" folder with the compiled JS files
+    "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+        "source.organizeImports": true
     },
-    "search.exclude": {
-        "out": true // set this to false to include "out" folder in search results
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
-    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
-    "typescript.tsc.autoDetect": "off"
+    "black-formatter.args": ["--max-line-length 100"],
+    "ruff.organizeImports": false,
+    "isort.args": ["--profile=black", "--line-length=100"]
 }
