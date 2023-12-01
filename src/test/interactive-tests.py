@@ -12,4 +12,4 @@ def this_is_a_long_line(with_a_lot_of_symbols: int, to_make_sure_black_is_actual
 
 import pandas as pd
 
-pd.DataFrame([1, 2, 3]).isnull()
+df: list[int] = pd.DataFrame([1, 2, 3]).isnull()
