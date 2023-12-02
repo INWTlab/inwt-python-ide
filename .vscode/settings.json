@@ -10,7 +10,7 @@
     "python.analysis.autoImportCompletions": true,
     "python.analysis.completeFunctionParens": false,
     "python.analysis.enablePytestExtra": false,
-    "python.analysis.gotoDefinitionInStringLiteral": true,
+    "python.analysis.gotoDefinitionInStringLiteral": false,
     "python.analysis.inlayHints.callArgumentNames": "off",
     "python.analysis.inlayHints.functionReturnTypes": false,
     "python.analysis.inlayHints.pytestParameters": true,
@@ -28,5 +28,8 @@
         "--ignore=D100"
     ],
     "ruff.organizeImports": true,
-    "vsintellicode.features.python.deepLearning": "enabled"
+    "vsintellicode.features.python.deepLearning": "enabled",
+    "sonarlint.disableTelemetry": true,
+    "mypy-type-checker.reportingScope": "workspace",
+    "mypy-type-checker.preferDaemon": true
 }

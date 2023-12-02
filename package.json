@@ -7,7 +7,7 @@
         "url": "https://github.com/inwtlab/inwt-python-ide"
     },
     "icon": "inwt-logo-square.png",
-    "version": "23.11.0",
+    "version": "23.12.0",
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -21,31 +21,17 @@
     "main": "./out/extension.js",
     "contributes": {
         "configuration": {
-            "title": "INWT Python IDE v2",
-            "properties": {
-                "INWT.Python.IDE.V2.updateWorkspaceSettings": {
-                    "description": "Automatically create a workspace settings.json according to INWT standards. Will not change workspace settings if they are already set.",
-                    "type": "boolean",
-                    "default": true
-                }
-            }
+            "title": "INWT Python IDE v2"
         },
         "configurationDefaults": {
-            "files.autoSave": "afterDelay",
             "files.trimFinalNewlines": true,
+            "mypy-type-checker.reportingScope": "workspace",
+            "mypy-type-checker.preferDaemon": true,
             "notebook.formatOnSave.enabled": true,
             "notebook.codeActionsOnSave": {
                 "source.organizeImports": true
             },
             "python.languageServer": "Pylance",
-            "python.analysis.autoFormatStrings": true,
-            "python.analysis.autoImportCompletions": true,
-            "python.analysis.completeFunctionParens": true,
-            "python.analysis.enablePytestExtra": false,
-            "python.analysis.gotoDefinitionInStringLiteral": true,
-            "python.analysis.inlayHints.callArgumentNames": "all",
-            "python.analysis.inlayHints.functionReturnTypes": false,
-            "python.analysis.inlayHints.pytestParameters": true,
             "[python]": {
                 "editor.formatOnSave": true,
                 "editor.defaultFormatter": "charliermarsh.ruff",
@@ -60,7 +46,7 @@
                 "--ignore=D100"
             ],
             "ruff.organizeImports": true,
-            "vsintellicode.features.python.deepLearning": "enabled"
+            "sonarlint.disableTelemetry": true
         },
         "keybindings": [
             {
@@ -95,6 +81,7 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-toolsai.jupyter",
+        "sonarsource.sonarlint-vscode",
         "stkb.rewrap",
         "visualstudioexptteam.vscodeintellicode"
     ],
