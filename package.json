@@ -29,6 +29,7 @@
             "mypy-type-checker.preferDaemon": true,
             "notebook.formatOnSave.enabled": true,
             "notebook.codeActionsOnSave": {
+                "source.fixAll": true,
                 "source.organizeImports": true
             },
             "python.languageServer": "Pylance",
@@ -39,7 +40,9 @@
                     "source.organizeImports": true
                 }
             },
-            "ruff.format.args": ["--line-length=100"],
+            "ruff.format.args": [
+                "--line-length=100"
+            ],
             "ruff.lint.args": [
                 "--select=ALL",
                 "--line-length=100",
@@ -77,10 +80,12 @@
         "charliermarsh.ruff",
         "donjayamanne.python-environment-manager",
         "inwtlab.python-smart-execute",
+        "KevinRose.vsc-python-indent",
         "ms-python.mypy-type-checker",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-toolsai.jupyter",
+        "njpwerner.autodocstring",
         "sonarsource.sonarlint-vscode",
         "stkb.rewrap",
         "visualstudioexptteam.vscodeintellicode"
@@ -94,16 +99,16 @@
         "test": "node ./out/test/runTest.js"
     },
     "devDependencies": {
-        "@types/vscode": "^1.52.0",
-        "@types/glob": "^7.1.3",
-        "@types/mocha": "^8.0.4",
-        "@types/node": "^12.11.7",
-        "eslint": "^7.15.0",
-        "@typescript-eslint/eslint-plugin": "^4.9.0",
-        "@typescript-eslint/parser": "^4.9.0",
-        "glob": "^7.1.6",
-        "mocha": "^8.1.3",
-        "typescript": "^4.1.2",
+        "@types/glob": "^8.1.0",
+        "@types/mocha": "^10.0.6",
+        "@types/node": "^20.10.4",
+        "@types/vscode": "^1.85.0",
+        "@typescript-eslint/eslint-plugin": "^6.13.2",
+        "@typescript-eslint/parser": "^6.13.2",
+        "eslint": "^8.55.0",
+        "glob": "^10.3.10",
+        "mocha": "^10.2.0",
+        "typescript": "^5.3.3",
         "vscode-test": "^1.4.1"
     }
 }
