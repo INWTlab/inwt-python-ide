@@ -10,6 +10,14 @@ def this_is_a_long_line(with_a_lot_of_symbols: int, to_make_sure_black_is_actual
     return with_a_lot_of_symbols + to_make_sure_black_is_actually_running_and_breaks_lines_at_100_chars
 
 
+def _fun_without_type(x: int):
+    return x
+
+
+def some_fun() -> str:
+    return _fun_without_type(2)
+
+
 import pandas as pd
 
 df: list[int] = pd.DataFrame([1, 2, 3]).isnull()
@@ -27,3 +35,12 @@ def my_complect_function():
 
 pwd = "askjahsd 918231 3hf0913 kjlkjf sdf,.-"
 secret = "secret_user"
+
+
+class Test():
+
+    def __init__(self):
+        pass
+
+    def method(self):
+        pass

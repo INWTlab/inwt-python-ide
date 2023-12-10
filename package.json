@@ -24,26 +24,29 @@
             "title": "INWT Python IDE v2"
         },
         "configurationDefaults": {
-            "files.trimFinalNewlines": true,
-            "mypy-type-checker.reportingScope": "workspace",
-            "mypy-type-checker.preferDaemon": true,
             "notebook.formatOnSave.enabled": true,
             "notebook.codeActionsOnSave": {
                 "source.organizeImports": true
             },
             "python.languageServer": "Pylance",
+            "python.analysis.typeCheckingMode": "basic",
+            "python.analysis.autoFormatStrings": true,
+            "python.analysis.autoImportCompletions": true,
+            "python.analysis.inlayHints.pytestParameters": true,
             "[python]": {
+                "files.trimFinalNewlines": true,
                 "editor.formatOnSave": true,
                 "editor.defaultFormatter": "charliermarsh.ruff",
                 "editor.codeActionsOnSave": {
                     "source.organizeImports": true
-                }
+                },
+                "rewrap.wrappingColumn": 100
             },
             "ruff.format.args": ["--line-length=100"],
             "ruff.lint.args": [
                 "--select=ALL",
                 "--line-length=100",
-                "--ignore=D100"
+                "--ignore=ANN,D"
             ],
             "ruff.organizeImports": true,
             "sonarlint.disableTelemetry": true
@@ -77,7 +80,6 @@
         "charliermarsh.ruff",
         "donjayamanne.python-environment-manager",
         "inwtlab.python-smart-execute",
-        "ms-python.mypy-type-checker",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-toolsai.jupyter",
