@@ -6,14 +6,6 @@
         "source.organizeImports": true
     },
     "python.languageServer": "Pylance",
-    "python.analysis.autoFormatStrings": true,
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.completeFunctionParens": false,
-    "python.analysis.enablePytestExtra": false,
-    "python.analysis.gotoDefinitionInStringLiteral": false,
-    "python.analysis.inlayHints.callArgumentNames": "off",
-    "python.analysis.inlayHints.functionReturnTypes": false,
-    "python.analysis.inlayHints.pytestParameters": true,
     "[python]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "charliermarsh.ruff",
@@ -25,11 +17,31 @@
     "ruff.lint.args": [
         "--select=ALL",
         "--line-length=100",
-        "--ignore=D100"
+        "--ignore=ANN,D"
     ],
     "ruff.organizeImports": true,
     "vsintellicode.features.python.deepLearning": "enabled",
     "sonarlint.disableTelemetry": true,
-    "mypy-type-checker.reportingScope": "workspace",
-    "mypy-type-checker.preferDaemon": true
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.testing.pytestEnabled": true,
+    "rewrap.wrappingColumn": 80,
+    "git.autofetch": true,
+    "diffEditor.renderSideBySide": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.defaultDateStyle": "absolute",
+    "cSpell.enabled": false,
+    "cSpell.language": "de,de-DE,en",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "vsintellicode.sql.completionsEnabled": false,
+    "githubIssues.issueBranchTitle": "feature/${issueNumber}_${sanitizedIssueTitle}",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.completeFunctionParens": true
 }
