@@ -1,5 +1,5 @@
 {
-    "name": "inwt-python-ide",
+    "name": "inwt-python-ide-v2",
     "displayName": "INWT Python IDE v2",
     "description": "Extension bundle to develop Python applications for Data Science.",
     "publisher": "inwtlab",
@@ -14,9 +14,6 @@
     "categories": [
         "Extension Packs",
         "Keymaps"
-    ],
-    "activationEvents": [
-        "onLanguage:python"
     ],
     "contributes": {
         "configuration": {
