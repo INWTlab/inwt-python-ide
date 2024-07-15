@@ -79,6 +79,7 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-toolsai.jupyter",
+        "njpwerner.autodocstring",
         "sonarsource.sonarlint-vscode",
         "stkb.rewrap",
         "visualstudioexptteam.vscodeintellicode"
