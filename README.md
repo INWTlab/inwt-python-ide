@@ -15,7 +15,4 @@ This extension provides the following features:
 
 ## Keybindings
 
--   ctrl+enter: (Smart) Execute selection or line in interactive window or debug console _and_ step
--   ctrl[-shift]-tab: Quick open of editors/files in group
--   ctrl-p: open recent projects/folders
 -   [ctrl-]f12: Jump to or back from definition

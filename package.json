@@ -42,7 +42,10 @@
             "ruff.lint.select": [
                 "ALL"
             ],
-            "ruff.lint.ignore": [],
+            "ruff.lint.ignore": [
+                "D",
+                "ANN"
+            ],
             "ruff.organizeImports": true
         },
         "keybindings": [
