@@ -7,7 +7,7 @@
         "url": "https://github.com/inwtlab/inwt-python-ide"
     },
     "icon": "inwt-logo-square.png",
-    "version": "23.12.0",
+    "version": "25.05.0",
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -38,34 +38,14 @@
                 },
                 "rewrap.wrappingColumn": 100
             },
-            "ruff.format.args": ["--line-length=100"],
-            "ruff.lint.args": [
-                "--select=ALL",
-                "--line-length=100",
-                "--ignore=ANN,D"
+            "ruff.lineLength": 100,
+            "ruff.lint.select": [
+                "ALL"
             ],
-            "ruff.organizeImports": true,
-            "sonarlint.disableTelemetry": true
+            "ruff.lint.ignore": [],
+            "ruff.organizeImports": true
         },
         "keybindings": [
-            {
-                "key": "ctrl+tab",
-                "command": "workbench.action.quickOpen"
-            },
-            {
-                "key": "ctrl+tab",
-                "command": "workbench.action.quickOpenNavigateNextInFilePicker",
-                "when": "inFilesPicker && inQuickOpen"
-            },
-            {
-                "key": "ctrl+p",
-                "command": "workbench.action.openRecent"
-            },
-            {
-                "key": "ctrl+p",
-                "command": "workbench.action.quickOpenNavigateNextInRecentFilesPicker",
-                "when": "inQuickOpen && inRecentFilesPicker"
-            },
             {
                 "key": "ctrl+f12",
                 "command": "workbench.action.navigateBack"
@@ -74,13 +54,12 @@
     },
     "extensionPack": [
         "charliermarsh.ruff",
-        "donjayamanne.python-environment-manager",
-        "inwtlab.python-smart-execute",
         "ms-python.python",
+        "ms-python.vscode-python-envs",
         "ms-python.vscode-pylance",
+        "ms-python.mypy-type-checker",
         "ms-toolsai.jupyter",
-        "sonarsource.sonarlint-vscode",
-        "stkb.rewrap",
+        "inwtlab.python-smart-execute",
         "visualstudioexptteam.vscodeintellicode"
     ],
     "scripts": {
