@@ -38,6 +38,7 @@
                 },
                 "rewrap.wrappingColumn": 100
             },
+            "ruff.configurationPreference": "filesystemFirst",
             "ruff.lineLength": 100,
             "ruff.lint.select": [
                 "ALL"
