@@ -7,7 +7,7 @@
         "url": "https://github.com/inwtlab/inwt-python-ide"
     },
     "icon": "inwt-logo-square.png",
-    "version": "25.5.3",
+    "version": "25.10.0",
     "engines": {
         "vscode": "^1.52.0"
     },
